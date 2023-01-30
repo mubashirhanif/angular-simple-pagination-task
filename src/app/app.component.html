@@ -1,12 +1,12 @@
 <hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
-<div *ngFor="let d of data | paginate: { itemsPerPage: 10, currentPage: p }" >
+<p>Simple pagination example</p>
+
+<div *ngFor="let d of data">
   <p>"userId" = {{ d.userId }}</p>
   <p>"id" = {{ d.id }}</p>
   <p>"title" = {{ d.title }}</p>
-  <p>"completed" = {{ d.completed }}</p>
-  <hr>
+  <hr />
 </div>
-<pagination-controls (pageChange)="p = $event" class="float-right"></pagination-controls>
+<button type="button" (click)="loadPrevious()" clickable>Previous</button>
+<button type="button" (click)="loadNext()" clickable>Next</button>
+<!-- Some Code related to button here here. -->
